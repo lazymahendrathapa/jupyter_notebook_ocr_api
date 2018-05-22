@@ -1,0 +1,16 @@
+version: '1'
+services:
+  icr-app:
+    build: ./app-build
+    ports:
+     - '5000:5000'
+    volumes:
+      - $PWD:/code
+    networks:
+      - ocr-network
+    container_name: ocr 
+
+networks:
+  icr-app-network:
+    external:
+      name: ocr-network
